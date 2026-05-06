@@ -23,7 +23,7 @@ def parse_log(file_path):
 
     return counter
 
-def save_to_csv(stats, filename="stats.csv"):
+def save_to_csv(stats, filename="kernel_error_stats"):
     with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(["ErrorType", "Count"])
