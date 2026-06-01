@@ -13,6 +13,12 @@ pub extern "C" fn _start() {
     exit();
 }
 
+#[unsafe(no_mangle)]
+pub extern "C" fn _start() {
+    TEST::std::mkdir("my_dir");
+    exit();
+}
+
 async fn subproc() {
     for i in 0..15 {
         println!("A");
