@@ -1,11 +1,11 @@
-#[test]
+#[test_case]
 fn test_split_path_root() {
     let (dir, file) = split_path("/test.txt").unwrap();
     assert_eq!(dir, "/");
     assert_eq!(file, "test.txt");
 }
 
-#[test]
+#[test_case]
 fn test_to_short_name_basic() {
     let short = to_short_name("test.txt");
     let expected = b"TEST TXT";
@@ -16,7 +16,7 @@ fn test_to_short_name_basic() {
     assert_eq!(&short2[0..11], &expected2);
 }
 
-#[test]
+#[test_case]
 fn test_ata_device_new() {
     let dev = AtaDevice::new(0x1F0, 0x3F6, 0);
     assert_eq!(dev.io_base, 0x1F0);
@@ -24,7 +24,7 @@ fn test_ata_device_new() {
     assert_eq!(dev.drive, 0);
 }
 
-#[test]
+#[test_case]
 fn test_ata_device_drive_selection() {
     let master = AtaDevice::new(0x1F0, 0x3F6, 0);
     let slave = AtaDevice::new(0x1F0, 0x3F6);
